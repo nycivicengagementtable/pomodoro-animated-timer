@@ -1,5 +1,3 @@
-var $ = require('jquery');
-
 // global variables needed across various functions
 var engageButton = $("#start-button");
 var subtractTime = $(".subtract-time");
@@ -14,9 +12,3 @@ resetButton.on("click", resetTimer);
 // event listeners which allow the user to change the break and work session times
 subtractTime.on("click", changeSessionValues);
 addTime.on("click", changeSessionValues);
-
-var changeSessionValues = require('./modules/changeTimers');
-var pauseCountDown = require('./modules/pauseTimer');
-var resetTimer = require('./modules/resetTimer');
-var startCountDown = require('./modules/timerCountDown');
-var timerChange = require('./modules/timerCountDownChange');
