@@ -4,12 +4,12 @@
 	padding: 3px;
 	margin-bottom: 5%;
 	margin: auto;
-	border-radius: 50%;
+	border-radius: 250rem;
 	border: 2px solid #0BFF2B;
 	transition: all .5s ease-in 0s;
 	transform: scale(0.75);
 	@media (min-width: $breakpointSmall) {
-		transform: scale(0.9);
+		transform: scale(1);
 		height: 50vh;
 		width: 50vh;
 	}
@@ -21,15 +21,12 @@
 .timer-inner-circle {
 	position: relative;
 	overflow: hidden;
-	margin-top: 15%;
+	border-radius: 200px;
 	font-size: $largeSize;
-	height: 80%;
+	height: 100%;
 	h2 {
+		margin-top: 20%;
 		font-size: $largeSize;
-		@media (min-width: $breakpointSmall) {
-			font-size: $largestSize;
-
-		}
 	}
 }
 

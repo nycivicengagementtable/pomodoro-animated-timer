@@ -44,29 +44,30 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(1);
+	"use strict";
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _pomodoro = __webpack_require__(2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// global variables needed across various functions
-	var engageButton = $("#start-button");
-	var subtractTime = $(".subtract-time");
-	var addTime = $(".add-time");
-	var resetButton = $("#reset-button");
-	var loopingTimer;
+	var engageButton = (0, _jquery2.default)("#start-button");
+	var subtractTime = (0, _jquery2.default)(".subtract-time");
+	var addTime = (0, _jquery2.default)(".add-time");
+	var resetButton = (0, _jquery2.default)("#reset-button");
+	var loopingTimer = void 0;
 
 	// event listeners which allow the user to start and reset the pomodoro clock
-	engageButton.on("click", startCountDown);
-	resetButton.on("click", resetTimer);
+	engageButton.on("click", _pomodoro.startCountDown);
+	resetButton.on("click", _pomodoro.resetTimer);
 
 	// event listeners which allow the user to change the break and work session times
-	subtractTime.on("click", changeSessionValues);
-	addTime.on("click", changeSessionValues);
-
-	var changeSessionValues = __webpack_require__(2);
-	var pauseCountDown = __webpack_require__(3);
-	var resetTimer = __webpack_require__(4);
-	var startCountDown = __webpack_require__(5);
-	var timerChange = __webpack_require__(6);
-
+	subtractTime.on("click", _pomodoro.changeSessionValues);
+	addTime.on("click", _pomodoro.changeSessionValues);
 
 /***/ },
 /* 1 */
@@ -10296,200 +10297,194 @@
 
 /***/ },
 /* 2 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// changeSessionValues permits user to change the length/values of the break and work
-	// sessions
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.changeSessionValues = changeSessionValues;
+	exports.pauseCountDown = pauseCountDown;
+	exports.resetTimer = resetTimer;
+	exports.startCountDown = startCountDown;
+	exports.timerChange = timerChange;
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//global variables which are needed accross various functions
+	var engageButton = (0, _jquery2.default)("#engage-button");
+	var subtractTime = (0, _jquery2.default)(".subtract-time");
+	var addTime = (0, _jquery2.default)(".add-time");
+	var resetButton = (0, _jquery2.default)("#reset-button");
+	var loopingTimer = void 0;
+
+	//event listeners which allow for the user to start and reset the pomodoro clock
+	engageButton.on("click", startCountDown);
+	resetButton.on("click", resetTimer);
+
+	//event listeners which allow for the user to change the break and work session times
+	subtractTime.on("click", changeSessionValues);
+	addTime.on("click", changeSessionValues);
+	//change Session Values allows for the user to change the values of the break and work session times
 	function changeSessionValues(event) {
-	  var target = $(event.target);
-	  var timerNumber;
-	  // decreases the break or work time by 1
-	  if (target.is(subtractTime)) {
-	    target.next().html(function(index, prevhtml) {
-	      // prevents the number from being lower than 1
-	      if(parseInt(prevhtml) === 1) {
-	        return prevhtml;
-	      }
-	      timerNumber = parseInt(prevhtml) - 1;
-	      return timerNumber;
-	    });
-	  }
-	  // increase the break or work time by 1
-	  if(target.is(addTime)) {
-	    target.next().html(function(index, prevhtml) {
-	      timerNumber = parseInt(prevhtml) + 1;
-	      return timerNumber;
-	    });
-	  }
-	  // every time the work duration is changed the timer clock html is also changed
-	  if(target.parents().is("#work-container")) {
-	    $("#timer-clock").html(timerNumber);
-	  }
+		var target = (0, _jquery2.default)(event.target);
+		var timerNumber = void 0;
+		//decreases the break or work time by one
+		if (target.is(subtractTime)) {
+			target.next().html(function (index, oldhtml) {
+				//does not allow the number to be lower than one
+				if (parseInt(oldhtml) === 1) {
+					return oldhtml;
+				}
+				timerNumber = parseInt(oldhtml) - 1;
+				return timerNumber;
+			});
+		}
+		//increase the the break or work time by one
+		if (target.is(addTime)) {
+			target.prev().html(function (index, oldhtml) {
+				timerNumber = parseInt(oldhtml) + 1;
+				return timerNumber;
+			});
+		}
+		//every time the work duration is changed the timer-clock html will be changed simultaneously
+		if (target.parents().is("#work-container")) {
+			(0, _jquery2.default)("#timer-clock").html(timerNumber);
+		}
 	}
-
-	module.exports = changeSessionValues;
-
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-	// pauseCountdown pauses the timer by clearing the setInterval
+	//pauseCountDown pauses the timer by clearing the setInterval
 	function pauseCountDown(event) {
-	  var target = $(event.target);
-	  // clears setInterval whcih executes the timer
-	  engageButton.off();
-	  clearInterval(loopingTimer);
-	  // removes the pause class and appends the start class so tha the timer
-	  // can be manipulated by the user.
-	  target.removeClass("pause");
-	  target.addClass("start");
-	  // enables the start button to allow user to start timer from the paused time
-	  engageButton.on("click", startCountDown);
-	  engageButton.html("Start");
+		var target = (0, _jquery2.default)(event.target);
+		//clears setInterval which executes the timer
+		engageButton.off();
+		clearInterval(loopingTimer);
+		//removes the pause class and appends the start class so that the timer can be affected by the user;
+		target.removeClass("pause");
+		target.addClass("start");
+		//enables the engage button to allows users the ability to start the timer from the paused time
+		engageButton.on("click", startCountDown);
+		engageButton.html("Start");
 	}
-
-	module.exports = pauseCountDown;
-
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	// resetTimer breaks the current setInterval and resets the Pomodoro Clock
+	//resetTimer breaks the current setInterval and resets the Pomodoro Timer
 	function resetTimer() {
-	  // clear setInterval
-	  clearInterval(loopingTimer);
-	  // change timer to match work duration string
-	  $("#timer-clock").html(function(index, prevhtml) {
-	    return $("#work-time").html();
-	  });
-	  // reenable add, subtract, and start timer events to permit user to customize
-	  // pomodoro sequence
-	  $(".timer-filler").css("top", "100%");
-	  subtractTime.on("click", changeSessionValues);
-	  addTime.on("click", changeSessionValues);
-	  engageButton.off();
-	  engageButton.on("click", startCountDown);
-	  engageButton.html("Start");
+		//clear setInterval
+		clearInterval(loopingTimer);
+		//change timer to match the work duration string
+		(0, _jquery2.default)("#timer-clock").html(function (index, oldhtml) {
+			return (0, _jquery2.default)("#work-time").html();
+		});
+		//reenable the add, subtract, and start timer events to allow for the user to customize the pomodoro sequence
+		(0, _jquery2.default)(".timer-filler").css("top", "100%");
+		subtractTime.on("click", changeSessionValues);
+		addTime.on("click", changeSessionValues);
+		engageButton.off();
+		engageButton.on("click", startCountDown);
+		engageButton.html("Start");
 	}
 
-	module.exports = resetTimer;
+	//startCountDown and timerChange manage the executions of the timer
 
-
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
-
-	// StartCountDown and timerChange manage the executions of the clock
 	function startCountDown(event) {
-	  var target = $(event.target);
-	  // unbinds the events of the decrement, increment, and start events while the timer is engaged
-	  engageButton.off();
-	  subtractTime.off();
-	  addTime.off();
-	  // removes the start class and adds the pause class which chagnes the inner html of the // button
-	  target.removeClass("start");
-	  target.addClass("pause");
-	  // binds event which permits teh timer to be paused
-	  engageButton.on("click", pauseCountDown);
-	  engageButton.html("Pause");
-	  // variables which target the elements that contain the work and break times
-	  var workDuration = $("#work-time");
-	  var breakDuration = $("#break-time");
-	  // change the timer title to the initial working session title
-	  $("#timer-title").hide().html()("Time to Focus!").fadeIn();
-	  // begins the timer loop which loads the animation and either the break time countdown
-	  // or work time countdown
-	  timerChange(workDuration, breakDuration);
+		var target = (0, _jquery2.default)(event.target);
+		//unbinds the events of the decrement,increment, and start events while the timer is in use
+		engageButton.off();
+		subtractTime.off();
+		addTime.off();
+		//removes the start class and add the pause class which will change the inner html of the button
+		target.removeClass("start");
+		target.addClass("pause");
+		//binds event which allows for the timer to be paused
+		engageButton.on("click", pauseCountDown);
+		engageButton.html("Pause");
+		//variables which target the elements which contain the work and break times
+		var workDuration = (0, _jquery2.default)("#work-time");
+		var breakDuration = (0, _jquery2.default)("#break-time");
+		//changes the time timer title to the initial working session title
+		(0, _jquery2.default)("#timer-title").hide().html("Time to Focus!").fadeIn();
+		//begins the timer loop which will load the animation and
+		timerChange(workDuration, breakDuration);
 	}
-
-	module.exports = startCountDown;
-
-
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
 
 	function timerChange(workTime, breakTime) {
-	  // variables which mark beginning states of the Work and Break times
-	  var initialWorkTime = workTime.html() + ":00";
-	  var initialBreakTime = breakTime.html() + ":00";
-	  // variable which targets the timer clock element
-	  var timerClock = $("#timer-clock");
-	  // variable which targets the timer bell which contains the audio tag
-	  var timerBell = document.getElementById("timer-bell");
-	  // sets the audio tag volume
-	  timerBell.volume = 0.75;
-	  // variables which contain pixels/second metric: the number the timer filler needs to
-	  // progress per second
-	  var workLoadInterval = 410 / (parseInt(initialWorkTime) * 60);
-	  var breakLoadInterval = 410 / (parseInt(initialBreakTime) * 60);
-	  // condition which changes the timer clock html to the initial work time
-	  if (workTime.html() === timerClock.html()) {
-	    timerClock.html(initialWorkTime);
-	  }
-	  // setInterval sets the initial timer function
-	  loopingTimer = window.setInterval(function() {
-	  // min and secs variables assign the min and secs strings to be used later in the
-	  // function
-	    var min = timerClock.html().split(":")[0];
-	    var secs = timerClock.html().split(":")[1];
-	  // condition for when the timer reaches 0:00
-	    if(timerCliock.html() === "0:00") {
-	      // reset the loader element out of view
-	      $(".timer-filler").css("top", "100%");
-	      // condition to detect if a working session has ended
-	      if($("#timer-title").html() === "Time to Focus!") {
-	        // change html to Break Time and change the audio tag so that user is alerted
-	        // that the session has ended
-	        $("#timer-title").html("Break Time");
-	        $(".timer-filler").toggleClass("timer-filler-work");
-	        $("timer-filler").toggleClass("timer-filler-break");
-	        timerClock.html(initialBreakTime);
-	        timerBell.src = "breakbell.mp3";
-	        timerBell.play();
-	        return;
-	      }
-	      // change the html to a working session and change/play the audio tag when
-	      // appropriate
-	      $("#timer-title").html("Time to Focus!");
-	      $(".timer-filler").toggleClass("timer-filler-work");
-	      $(".timer-filler").toggleClass("timer-filler-break");
-	      timerClock.html(initalWorkTime);
-	      timerBell.src = "workbell.mp3";
-	      timerBell.play();
-	      return;
-	    }
-	    // if the secs counter reaches 00 decrease the minute by 1  and restart the minute
-	    // counter
-	    if (secs === "00") {
-	      timerClock.html(function(index, prevhtml) {
-	        return (paresInt(min) - 1) + ":" + (60 - 1);
-	      });
-	    }
-	    // if the secs counter has not reached 00 decrement the secs counter by 1 and move
-	    // the timer loader the appropriate amount to indicate to the user the progress of // the session
-	    if (secs !== "00") {
-	      timerClock.html(function(index, prevhtml) {
-	        var seconds = parseInt(secs) - 1;
-	        if (seconds < 10) {
-	          seconds = "0" + seconds;
-	        }
-	        return min + ":" + seconds;
-	      });
-	      if(("#timer-title").html() === "Time to Focus!") {
-	        $(".timer-filler").css("top", "-=" + workLoadInterval);
-	      }
-	      if(("#timer-title").html() === "Break Time") {
-	        $(".timer-filler").css("top", "-=" + breakLoadInterval);
-	      }
-	    }
-	  }, 1000);
+		// variables which mark the beginning states of the Work and Break time
+		var initialWorkTime = workTime.html() + ":00";
+		var initialBreakTime = breakTime.html() + ":00";
+		//variable which targes the timer clock element
+		var timerClock = (0, _jquery2.default)("#timer-clock");
+		//variable which targets the timer bell which contains the audio tag
+		var timerBell = document.getElementById("timer-bell");
+		//sets the audio tag volume
+		timerBell.volume = 0.5;
+		//variables which contain pixels/second metric which is the number the timer filler needs to progress per each second
+		var workLoadInterval = 410 / (parseInt(initialWorkTime) * 60);
+		var breakLoadInterval = 410 / (parseInt(initialBreakTime) * 60);
+
+		//condition changes the timer-clock html to the initial worktime
+		if (workTime.html() === timerClock.html()) {
+			timerClock.html(initialWorkTime);
+		}
+		//setInterval sets the intial timer function
+		loopingTimer = window.setInterval(function () {
+			//min and secs assign the min and seconds strings to be used later in the function
+			var min = timerClock.html().split(":")[0];
+			var secs = timerClock.html().split(":")[1];
+			//condition for when the timer reaches 0:00
+			if (timerClock.html() === "0:00") {
+				//reset the loader element out of view
+				(0, _jquery2.default)(".timer-filler").css("top", "100%");
+				//condition to detect if a working session has ended
+				if ((0, _jquery2.default)("#timer-title").html() === "Time to Focus!") {
+					//change html to Break Time and change the audio tag  to alert the user that the session has ended
+					(0, _jquery2.default)("#timer-title").html("Break Time");
+					(0, _jquery2.default)(".timer-filler").toggleClass("timer-filler-work");
+					(0, _jquery2.default)(".timer-filler").toggleClass("timer-filler-break");
+					timerClock.html(initialBreakTime);
+					timerBell.src = "breakbell.mp3";
+					timerBell.play();
+					return;
+				}
+				//change the html to a working session and change/play the audio tag as appropriate
+				(0, _jquery2.default)("#timer-title").html("Time to Focus!");
+				(0, _jquery2.default)(".timer-filler").toggleClass("timer-filler-work");
+				(0, _jquery2.default)(".timer-filler").toggleClass("timer-filler-break");
+				timerClock.html(initialWorkTime);
+				timerBell.src = "workbell.mp3";
+				timerBell.play();
+				return;
+			}
+
+			//if the seconds counter has reached 00 decrease the minute by one and restart the minute counter
+			if (secs === "00") {
+				timerClock.html(function (index, oldhtml) {
+					return parseInt(min) - 1 + ":" + (60 - 1);
+				});
+			}
+
+			//if the seconds counter has not reached 00 decrement the seconds counter by oene and move the timer loader the appropriate amount to indicate to the user the progress of the session
+			if (secs !== "00") {
+				timerClock.html(function (index, oldhtml) {
+					var seconds = parseInt(secs) - 1;
+					if (seconds < 10) {
+						seconds = "0" + seconds;
+					}
+					return min + ":" + seconds;
+				});
+
+				if ((0, _jquery2.default)("#timer-title").html() === "Time to Focus!") {
+					(0, _jquery2.default)(".timer-filler").css("top", "-=" + workLoadInterval);
+				}
+
+				if ((0, _jquery2.default)("#timer-title").html() === "Break Time") {
+					(0, _jquery2.default)(".timer-filler").css("top", "-=" + breakLoadInterval);
+				}
+			}
+		}, 1000);
 	}
-
-	module.exports = timerChange;
-
 
 /***/ }
 /******/ ]);

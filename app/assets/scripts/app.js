@@ -1,11 +1,10 @@
-var $ = require('jquery');
-
+import $ from 'jquery';
 // global variables needed across various functions
-var engageButton = $("#start-button");
-var subtractTime = $(".subtract-time");
-var addTime = $(".add-time");
-var resetButton = $("#reset-button");
-var loopingTimer;
+const engageButton = $("#start-button");
+const subtractTime = $(".subtract-time");
+const addTime = $(".add-time");
+const resetButton = $("#reset-button");
+let loopingTimer;
 
 // event listeners which allow the user to start and reset the pomodoro clock
 engageButton.on("click", startCountDown);
@@ -15,8 +14,4 @@ resetButton.on("click", resetTimer);
 subtractTime.on("click", changeSessionValues);
 addTime.on("click", changeSessionValues);
 
-var changeSessionValues = require('./modules/changeTimers');
-var pauseCountDown = require('./modules/pauseTimer');
-var resetTimer = require('./modules/resetTimer');
-var startCountDown = require('./modules/timerCountDown');
-var timerChange = require('./modules/timerCountDownChange');
+import { changeSessionValues, pauseCountDown, resetTimer, startCountDown, timerChange } from './modules/pomodoro';
