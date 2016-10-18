@@ -1,0 +1,32 @@
+button {
+	height: 40px;
+	width: 90px;
+	color: white;
+	border:none;
+	font-size: $regularSizeLarger;
+	border-radius: 5px;s
+	transition: all .2s linear 0s;
+	box-shadow: 1px 2px 2px 2px #000;
+	outline: none;
+	letter-spacing: 0.1em;
+}
+
+.start,
+.pause {
+	background-color: #fa442d;
+	&:focus, &:active {
+		transform: translate(1px,1px);
+		color: black;
+		box-shadow: 0px 1px 1px 1px black;
+	}
+}
+
+.reset {
+	background-color: #844cae;
+	margin-left: 10px;
+	&:focus, &:active {
+		transform: translate(1px,1px);
+		color: black;
+		box-shadow: 0px 1px 1px 1px black;
+	}
+}

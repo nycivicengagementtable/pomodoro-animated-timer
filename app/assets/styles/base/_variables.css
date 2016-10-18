@@ -1,0 +1,33 @@
+/* Layout Breakpoints */
+
+$breakpointLarge: 1280px;
+$breakpointMed: 1040px;
+$breakpointSmall: 600px;
+$breakpointXSmall: 400px;
+$breakpointXSmaller: 320px;
+
+/* Font Sizes */
+$regularSizeSmaller: 1rem;
+$regularSize: 1.25rem;
+$regularSizeLarger: 1.5rem;
+$midSize: 1.75rem;
+$largeSize: 2.5rem;
+$largestSize: 3.125rem;
+$buttonSize: 1.875rem;
+
+/* Font Families */
+
+$textfont: 'Roboto', sans-serif;
+
+/* Colors */
+
+$text-color: #fff;
+$link-color: black;
+$link-color-hover: #C30000;
+$timer-filler-work-color: #1CB530;
+$timer-filler-break-color: #D87D2C;
+
+/* Grids */
+
+$gridColumns: 12;
+$full-width: 100%;
