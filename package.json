@@ -5,6 +5,7 @@
     "styles": "gulp styles",
     "scripts": "gulp scripts",
     "modernizr": "gulp modernizr",
+    "copyFiles": "gulp copyGeneralFiles",
     "build": "gulp build"
   },
   "version": "1.0.0",
