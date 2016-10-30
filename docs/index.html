@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pomodoro Animated Timer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Productivity timer, JavaScript application, postcss, gulp task runner, webpack, es6 features, es2015">
+  <meta name="description" content="Pomodoro Productivity Timer Application using HTML, CSS, and JavaScript">
+  <link rel="stylesheet" href="assets/styles/styles-2b4a3a19b3.css"/>
+
+  <script src="assets/scripts/vendor-d8e757ceb4.js"></script>
+</head>
+<body>
+  <header class="content-center">
+    <h1>Pomodoro Clock</h1>
+  </header>
+  <section class="container content-center">
+    <div class="full-width break-container">
+      <div id="break-container" class="full-width break-container">
+        <p>Break</p>
+        <div>
+          <span class="subtract-time">-</span>
+          <span id="break-time">5</span>
+          <span class="add-time">+</span>
+        </div><!-- end Break spans -->
+      </div><!-- end Break Container -->
+      <div id="work-container" class="full-width work-container">
+        <p>Work</p>
+        <div>
+          <span class="subtract-time">-</span>
+          <span id="work-time">25</span>
+          <span class="add-time">+</span>
+        </div><!-- end Work spans -->
+      </div><!-- end Work Container -->
+    </div><!-- end Half Width Medium Break Container -->
+  </section>
+  <section class="content-center">
+    <div class="timer-container">
+      <div class="timer-inner-circle">
+        <h2 id="timer-title">Session</h2>
+        <div id="timer-clock" class="timer-clock">25</div>
+          <button id="engage-button" class="start">Start</button>
+          <button id="reset-button" class="reset">Reset</button>
+        <div class="timer-filler timer-filler-work">
+          <div class="gradient-animation"></div>
+        </div>
+      </div>
+    </div>
+    <audio id="timer-bell" src="/assets/sounds/workbell.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+  <footer class="container content-center footer">
+    <ul>
+      <li><a href="http://www.mariadcampbell.com">©️ 2016 Maria D. Campbell</a></li>
+    </ul>
+  </footer>
+  <script src="assets/scripts/app-18154b87a7.js"></script>
+</body>
+</html>
