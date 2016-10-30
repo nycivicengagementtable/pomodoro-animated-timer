@@ -128,7 +128,7 @@ export function timerChange(workTime, breakTime) {
     			$(".timer-filler").toggleClass("timer-filler-work");
     			$(".timer-filler").toggleClass("timer-filler-break");
     			timerClock.html(initialBreakTime);
-    			timerBell.src = "../../assets/sounds/breakbell.mp3";
+    			timerBell.src = "assets/sounds/breakbell.mp3";
     			timerBell.play();
     			return;
     		}
@@ -137,7 +137,7 @@ export function timerChange(workTime, breakTime) {
     		$(".timer-filler").toggleClass("timer-filler-work");
     	  $(".timer-filler").toggleClass("timer-filler-break");
     		timerClock.html(initialWorkTime);
-    		timerBell.src = "../../assets/sounds/workbell.mp3";
+    		timerBell.src = "assets/sounds/workbell.mp3";
     		timerBell.play();
     		return;
     	}
