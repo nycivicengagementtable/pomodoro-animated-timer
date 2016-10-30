@@ -10436,7 +10436,7 @@
 					(0, _jquery2.default)(".timer-filler").toggleClass("timer-filler-work");
 					(0, _jquery2.default)(".timer-filler").toggleClass("timer-filler-break");
 					timerClock.html(initialBreakTime);
-					timerBell.src = "../assets/sounds/breakbell.mp3";
+					timerBell.src = "/assets/sounds/breakbell.mp3";
 					timerBell.play();
 					return;
 				}
@@ -10445,7 +10445,7 @@
 				(0, _jquery2.default)(".timer-filler").toggleClass("timer-filler-work");
 				(0, _jquery2.default)(".timer-filler").toggleClass("timer-filler-break");
 				timerClock.html(initialWorkTime);
-				timerBell.src = "../assets/sounds/workbell.mp3";
+				timerBell.src = "/assets/sounds/workbell.mp3";
 				timerBell.play();
 				return;
 			}
