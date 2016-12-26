@@ -4,7 +4,7 @@
 	padding: 3px;
 	margin-bottom: 5%;
 	margin: auto;
-	border-radius: 250rem;
+	border-radius: 50%;
 	border: 2px solid #0BFF2B;
 	transition: all .5s ease-in 0s;
 	transform: scale(0.8);
@@ -21,7 +21,7 @@
 .timer-inner-circle {
 	position: relative;
 	overflow: hidden;
-	border-radius: 200px;
+	border-radius: 50%;
 	font-size: $largeSize;
 	height: 100%;
 	h2 {
