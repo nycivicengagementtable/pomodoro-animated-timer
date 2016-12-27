@@ -1,14 +1,19 @@
 button {
-    height: 40px;
-    width: 90px;
+    height: 30px;
+    width: 80px;
     color: white;
     border: none;
-    font-size: $regularSizeLarger;
+    font-size: $regularSize;
     border-radius: 5px;
     transition: all .2s linear 0s;
     box-shadow: 1px 2px 2px 2px #000;
     outline: none;
     letter-spacing: 0.1em;
+	@media all and (min-width: $breakpointSmall) {
+		height: 40px;
+	    width: 90px;
+		font-size: $regularSizeLarger;
+	}
 }
 
 .start, .pause {

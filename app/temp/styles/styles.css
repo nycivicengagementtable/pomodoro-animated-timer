@@ -424,17 +424,22 @@ menu {
     height: 0px;
     visibility: hidden;
 }button {
-    height: 40px;
-    width: 90px;
+    height: 30px;
+    width: 80px;
     color: white;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     border-radius: 5px;
     -webkit-transition: all .2s linear 0s;
     transition: all .2s linear 0s;
     box-shadow: 1px 2px 2px 2px #000;
     outline: none;
     letter-spacing: 0.1em;
+}@media all and (min-width: 600px) {button{
+    height: 40px;
+    width: 90px;
+    font-size: 1.5rem;
+  }
 }.start, .pause {
     background-color: #fa442d;
 }.start:focus, .start:active, .pause:focus, .pause:active {
@@ -532,15 +537,17 @@ menu {
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    font-size: 2.5rem;
     height: 100%;
 }.timer-inner-circle h2 {
-  margin-top: 16%;
-  font-size: 2.5rem;
+  margin-top: 23%;
+  font-size: 1.75rem;
   letter-spacing: 0.2em;
 }@media all and (min-width: 600px) {.timer-inner-circle h2{
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
+    font-size: 2.5rem;
   }
+}.timer-title {
+
 }.timer-filler {
     position: absolute;
     height: 125%;
@@ -553,14 +560,15 @@ menu {
 }.timer-filler-break {
     background-color: #D87D2C;
 }.timer-clock {
-    margin: 2.5% 0;
-    font-size: 3.125rem;
+    margin: 5% 0 10%;
+    font-size: 1.75rem;
 	letter-spacing: 0.2em;
 }@media all and (min-width: 600px) {.timer-clock{
     margin: 7.5% 0 18%;
     letter-spacing: 0.2em;
+    font-size: 3.125rem;
   }@media all and (min-height: 800px) {.timer-clock{
-      margin-bottom: 10%;
+      margin: 5% 0 10%;
     }
   }
 }

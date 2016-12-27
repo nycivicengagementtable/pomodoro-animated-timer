@@ -22,16 +22,20 @@
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    font-size: $largeSize;
     height: 100%;
     h2 {
-        margin-top: 16%;
-        font-size: $largeSize;
+        margin-top: 23%;
+        font-size: $midSize;
 		letter-spacing: 0.2em;
 		@media all and (min-width: $breakpointSmall) {
-			letter-spacing: 0.2em;
+			letter-spacing: 0.15em;
+			font-size: $largeSize;
 		}
     }
+}
+
+.timer-title {
+
 }
 
 .timer-filler {
@@ -52,14 +56,15 @@
 }
 
 .timer-clock {
-    margin: 2.5% 0;
-    font-size: $largestSize;
+    margin: 5% 0 10%;
+    font-size: $midSize;
 	letter-spacing: 0.2em;
     @media all and (min-width: $breakpointSmall) {
         margin: 7.5% 0 18%;
 		letter-spacing: 0.2em;
+		font-size: $largestSize;
 		@media all and (min-height: $breakpointHeightSmall2) {
-			margin-bottom: 10%;
+			margin: 5% 0 10%;
 		}
     }
 }
