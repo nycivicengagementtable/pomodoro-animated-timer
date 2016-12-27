@@ -1,34 +1,30 @@
 .break-container {
-	margin-top: 0;
-	cursor:pointer;
+    margin-top: 0;
+    cursor: pointer;
 }
 
-.break-container,
-.work-container {
-	font-size: $midSize;
-	margin-bottom: 2.5%;
-	margin-top: 2.5%;
-}
-.break-container div,
-.work-container div {
-	display: inline-block;
-	margin: 10px 10px 0;
+.break-container, .work-container {
+    font-size: $midSize;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
 }
 
-.subtract-time,
-.add-time {
-	padding: 2px 5px;
+.break-container div, .work-container div {
+    display: inline-block;
+    margin: 10px 10px 0;
+}
+
+.subtract-time, .add-time {
+    padding: 2px 5px;
 }
 
 @media (max-width: $breakpointSmall) {
-	.break-container,
-	.work-container {
-		display: block;
-		margin: 0 auto;
-	}
-	.break-container div,
-	.work-container div {
-		display: inline-block;
-		margin: 10px 10px 0;
-	}
+    .break-container, .work-container {
+        display: block;
+        margin: 0 auto;
+    }
+    .break-container div, .work-container div {
+        display: inline-block;
+        margin: 10px 10px 0;
+    }
 }

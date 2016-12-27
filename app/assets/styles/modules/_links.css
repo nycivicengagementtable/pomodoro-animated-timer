@@ -1,17 +1,15 @@
 a {
-	display: inline-block;
-	font-family: $textfont;
-  text-decoration: none;
-  transition: color 0.5s linear 0s, transform 0.5s;
-  color: $link-color;
-	font-size: $regularSize;
-
-	&:hover {
-    color: $link-color-hover;
-    transform: scale(1.1, 1.1);
-  }
-
-	@media (max-width: $breakpointSmall) {
-	font-size: $regularSize;
-	}
+    display: inline-block;
+    font-family: $textfont;
+    text-decoration: none;
+    transition: color 0.5s linear 0s, transform 0.5s;
+    color: $link-color;
+    font-size: $regularSize;
+    &:hover {
+        color: $link-color-hover;
+        transform: scale(1.1, 1.1);
+    }
+    @media (max-width: $breakpointSmall) {
+        font-size: $regularSize;
+    }
 }

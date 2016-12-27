@@ -1,56 +1,65 @@
 .timer-container {
-	height: 50vh;
-	width: 50vh;
-	padding: 3px;
-	margin-bottom: 5%;
-	margin: auto;
-	border-radius: 50%;
-	border: 2px solid #0BFF2B;
-	transition: all .5s ease-in 0s;
-	transform: scale(0.8);
-	@media (min-width: $breakpointSmall) {
-		transform: scale(1);
-		height: 50vh;
-		width: 50vh;
-	}
-	&:hover {
-		box-shadow: 0px, 0px, 3px, 5px, #0BFF2B;
-	}
+    height: 50vh;
+    width: 50vh;
+    padding: 3px;
+    margin: 5% auto 0;
+    border-radius: 50%;
+    border: 2px solid #0BFF2B;
+    transition: all .5s ease-in 0s;
+    transform: scale(1);
+    @media (min-width: $breakpointSmall) {
+        transform: scale(1);
+        margin: 5% auto 0;
+        height: 50vh;
+        width: 50vh;
+    }
+    &:hover {
+        box-shadow: 0px, 0px, 3px, 5px, #0BFF2B;
+    }
 }
 
 .timer-inner-circle {
-	position: relative;
-	overflow: hidden;
-	border-radius: 50%;
-	font-size: $largeSize;
-	height: 100%;
-	h2 {
-		margin-top: 20%;
-		font-size: $largeSize;
-	}
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    font-size: $largeSize;
+    height: 100%;
+    h2 {
+        margin-top: 16%;
+        font-size: $largeSize;
+		letter-spacing: 0.2em;
+		@media all and (min-width: $breakpointSmall) {
+			letter-spacing: 0.2em;
+		}
+    }
 }
 
 .timer-filler {
-	position: absolute;
-	height: 110%;
-	width: 100%;
-	top: 100%;
-	z-index: -100;
-	overflow: hidden;
+    position: absolute;
+    height: 125%;
+    width: 100%;
+    top: 100%;
+    z-index: -100;
+    overflow: hidden;
 }
 
 .timer-filler-work {
-	background-color: $timer-filler-work-color;
+    background-color: $timer-filler-work-color;
 }
 
 .timer-filler-break {
-	background-color: $timer-filler-break-color;
+    background-color: $timer-filler-break-color;
 }
 
 .timer-clock {
-	margin: 2.5% 0;
-	font-size: $largestSize;
-	@media (min-width: $breakpointSmall) {
-		margin: 2.5% 0 7.5%;
-	}
+    margin: 2.5% 0;
+    font-size: $largestSize;
+	letter-spacing: 0.2em;
+    @media all and (min-width: $breakpointSmall) {
+        margin: 7.5% 0 18%;
+		letter-spacing: 0.2em;
+		@media all and (min-height: $breakpointHeightSmall2) {
+			margin-bottom: 10%;
+		}
+    }
 }

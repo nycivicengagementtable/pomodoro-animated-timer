@@ -1,18 +1,26 @@
-/* Layout Breakpoints */
+/* Layout Width Breakpoints */
 
 $breakpointLarge: 1280px;
 $breakpointMed: 1040px;
+$breakpointSmall2: 768px;
 $breakpointSmall: 600px;
 $breakpointXSmall: 400px;
 $breakpointXSmaller: 320px;
 
+/* Layout Height Breakpoints */
+
+$breakpointHeightSmall2: 800px;
+$breakpointHeightSmall3: 900px;
+
 /* Font Sizes */
+
 $regularSizeSmaller: 1rem;
 $regularSize: 1.25rem;
 $regularSizeLarger: 1.5rem;
 $midSize: 1.75rem;
 $largeSize: 2.5rem;
 $largestSize: 3.125rem;
+$largestSize2: 3.5rem;
 $buttonSize: 1.875rem;
 
 /* Font Families */

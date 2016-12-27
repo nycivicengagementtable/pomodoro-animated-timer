@@ -1,15 +1,14 @@
 header h1 {
-	padding-top: 1.5rem;
-	margin: 0 auto;
-	font-size: $largeSize;
-
-	@media (min-width: $breakpointSmall) {
-		font-size: $largestSize;
-	}
+    padding-top: 1.5rem;
+    margin: 0 auto;
+    font-size: $largeSize;
+    @media (min-width: $breakpointSmall) {
+        font-size: $largestSize;
+    }
 }
 
 @media (min-width: $breakpointSmall) {
-	header {
-		padding: 0;
-	}
+    header {
+        padding: 0;
+    }
 }
