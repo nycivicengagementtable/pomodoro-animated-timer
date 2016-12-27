@@ -7,6 +7,10 @@
     font-size: $midSize;
     margin-bottom: 2.5%;
     margin-top: 2.5%;
+	@media all and (max-width: $breakpointSmall) {
+		display: block;
+        margin: 0 auto;
+	}
 }
 
 .break-container div, .work-container div {
@@ -18,13 +22,8 @@
     padding: 2px 5px;
 }
 
-@media (max-width: $breakpointSmall) {
-    .break-container, .work-container {
-        display: block;
-        margin: 0 auto;
-    }
-    .break-container div, .work-container div {
-        display: inline-block;
-        margin: 10px 10px 0;
-    }
+span.subtract-time, span.add-time, #break-time, #work-time {
+	@media all and (min-height: $breakpointLargest) {
+		font-size: $largestSize;
+	}
 }

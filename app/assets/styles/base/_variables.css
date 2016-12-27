@@ -1,6 +1,7 @@
 /* Layout Width Breakpoints */
 
 $breakpointLarge: 1280px;
+$breakpointLargest: 2560px;
 $breakpointMed: 1040px;
 $breakpointSmall2: 768px;
 $breakpointSmall: 600px;
@@ -21,6 +22,8 @@ $midSize: 1.75rem;
 $largeSize: 2.5rem;
 $largestSize: 3.125rem;
 $largestSize2: 3.5rem;
+$sizeGrande: 5rem;
+$sizeUltraGrande: 8rem;
 $buttonSize: 1.875rem;
 
 /* Font Families */

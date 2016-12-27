@@ -6,99 +6,68 @@
 
 /* column classes */
 
-.half-width-small {
+.half-width-small, .three-quarters-width-small, .full-width-small, .half-width-medium, .three-quarters-width-medium, .full-width-medium, .half-width-large, .three-quarters-width-large, .full-width-large {
     display: inline-block;
+}
+
+.full-width-small, .half-width-medium, .half-width-large {
     width: $full-width / 2;
 }
 
-.three-quarters-width-small {
-    display: inline-block;
+.three-quarters-width-small, .three-quarters-width-medium, .three-quarters-width-large {
     width: $full-width / 1.3;
 }
 
-.full-width-small {
-    display: inline-block;
+.full-width-small, .full-width-medium, .full-width-large {
     width: $full-width;
 }
-
-.half-width-medium {
-    display: inline-block;
-    width: $full-width / 2;
-}
-
-.three-quarters-width-medium {
-    display: inline-block;
-    width: $full-width / 1.3;
-}
-
-.full-width-medium {
-    display: inline-block;
-    width: $full-width;
-}
-
-.half-width-large {
-    display: inline-block;
-    width: $full-width / 2;
-}
-
-.three-quarters-width-large {
-    display: inline-block;
-    width: $full-width / 1.3;
-}
-
-.full-width-large {
-    display: inline-block;
-    width: $full-width;
-}
-
 
 /* media queries */
 
 @media (max-width: $breakpointSmall) {
-    .half-width-small {
+    .half-width-small, .three-quarters-width-small, .full-width-small {
         display: inline-block;
+    }
+    .half-width-small {
         width: $full-width / 2;
     }
     .three-quarters-width-small {
-        display: inline-block;
         width: $full-width / 1.3;
     }
     .full-width-small {
-        display: inline-block;
         width: $full-width;
     }
 }
 
 @media (max-width: $breakpointSmall) and (max-width: $breakpointMed) {
-    .half-width-medium {
+    .half-width-medium, .three-quarters-width-medium, .full-width-medium {
         display: inline-block;
+    }
+    .half-width-medium {
         width: $full-width / 2;
     }
     .three-quarters-width-medium {
-        display: inline-block;
         width: $full-width / 1.3;
     }
     .full-width-medium {
-        display: inline-block;
         width: $full-width;
     }
 }
 
 @media (max-width: $breakpointMed) {
-    .half-width-large {
+    .half-width-large, .three-quarters-width-large, .full-width-large {
         display: inline-block;
+    }
+    .half-width-large {
         width: $full-width / 2;
     }
     .three-quarters-width-large {
-        display: inline-block;
         width: $full-width / 1.3;
     }
     .full-width-large {
-        display: inline-block;
         width: $full-width;
     }
 }
-
 
 /* align content */
 

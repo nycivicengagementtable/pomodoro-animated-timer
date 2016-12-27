@@ -1,12 +1,14 @@
 footer {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
+    padding: 1rem 0 1.25rem;;
     background: rgba(0, 0, 0, 0.78);
+	@media all and (min-height: $breakpointLargest) {
+		padding: 1rem 0 1.75rem;
+	}
 }
 
 .footer a {
     color: white;
+	@media all and (min-height: $breakpointLargest) {
+		font-size: $largeSize;
+	}
 }

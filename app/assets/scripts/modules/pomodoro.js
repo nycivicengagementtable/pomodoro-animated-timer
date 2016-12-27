@@ -90,7 +90,7 @@ export function startCountDown(event) {
     var breakDuration = $("#break-time");
     // changes the time timer title to the initial working session title
     $("#timer-title").hide().html("Time to Focus!").fadeIn();
-    // begins the timer loop which will load the animation and
+    // begins the timer loop which will load the animation
     timerChange(workDuration, breakDuration);
 }
 
@@ -104,9 +104,10 @@ export function timerChange(workTime, breakTime) {
     var timerBell = document.getElementById("timer-bell");
     // sets the audio tag volume
     timerBell.volume = 0.5;
-    // variables which contain pixels/second metric which is the number the timer filler needs to progress per each second
-    var workLoadInterval = 410 / (parseInt(initialWorkTime) * 60);
-    var breakLoadInterval = 410 / (parseInt(initialBreakTime) * 60);
+    /* variables which contain pixels/second metric which is the number the timer filler needs to progress per each second. 50 is the vh height of .timer-container and 1.6 is the pixels equivalent of 1 rem. And 1 rem is equivalent to 1 vh. */
+	var timerContainerHeight = $('.timer-container').height();
+    var workLoadInterval = timerContainerHeight / (parseInt(initialWorkTime) * 60);
+    var breakLoadInterval = timerContainerHeight / (parseInt(initialBreakTime) * 60);
 
     // condition changes the timer-clock html to the initial worktime
     if (workTime.html() === timerClock.html()) {

@@ -30,17 +30,20 @@
 		@media all and (min-width: $breakpointSmall) {
 			letter-spacing: 0.15em;
 			font-size: $largeSize;
+			@media all and (min-width: $breakpointSmall2) {
+				margin-top: 26%;
+				@media all and (min-height: $breakpointLargest) {
+					font-size: $sizeUltraGrande;
+				}
+			}
 		}
     }
 }
 
-.timer-title {
-
-}
 
 .timer-filler {
     position: absolute;
-    height: 125%;
+    height: 100%;
     width: 100%;
     top: 100%;
     z-index: -100;
@@ -65,6 +68,9 @@
 		font-size: $largestSize;
 		@media all and (min-height: $breakpointHeightSmall2) {
 			margin: 5% 0 10%;
+			 @media all and (min-height: $breakpointLargest) {
+				 font-size: $sizeUltraGrande;
+			 }
 		}
     }
 }

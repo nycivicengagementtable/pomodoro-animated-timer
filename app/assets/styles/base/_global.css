@@ -26,6 +26,9 @@ p {
     margin: 0;
     color: #aaa;
     letter-spacing: 0.1em;
+    @media all and (min-height: $breakpointLargest) {
+        font-size: $largestSize;
+    }
 }
 
 button {
