@@ -268,18 +268,15 @@ menu {
  * Add the correct display in IE 10-.
  */[hidden] {
   display: none;
-}/* Base *//* Layout Width Breakpoints *//* Layout Height Breakpoints *//* Font Sizes *//* Font Families *//* Colors *//* Grids */* {
+}/* Base *//* Layout Width Breakpoints *//* Layout Height Breakpoints *//* Font Sizes *//* Font Families *//* Colors *//* Grids */html {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}html, body {
-    height: 100%;
+}*, *:before, *:after {
+    box-sizing: inherit;
 }body {
     width: 100%;
     font-size: 1.25rem;
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
-    overflow: hidden;
 }h1 {
     margin-bottom: 0;
     letter-spacing: 0.1em;
@@ -388,25 +385,47 @@ menu {
     background-color: rgba(196, 41, 41, 1);
     color: white;
     text-shadow: 3px 2px 1px #000;
+}/* Sticky Footer */:root {
+  --space: 1.5em 0;
+  --space-lg: 2em 0;
 }.Site {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    min-height: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    min-height: 100vh;
 }.Site-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-flex: 1;
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
-    width: 100%;
+    padding: var(--space) 0 0;
 }.Site-content::after {
     content: '\00a0';
     display: block;
-    height: 0px;
+    margin-top: var(--space);
+    height: 0;
     visibility: hidden;
+}@media all and (min-width: 1280px) {
+    .Site-content {
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+    }
 }button {
     height: 30px;
     width: 80px;
@@ -419,17 +438,6 @@ menu {
     box-shadow: 1px 2px 2px 2px #000;
     outline: none;
     letter-spacing: 0.1em;
-}@media all and (min-width: 600px) {button{
-    height: 40px;
-    width: 90px;
-    font-size: 1.5rem;
-  }@media all and (min-height: 2560px) {button{
-      height: 100px;
-      width: 200px;
-      font-size: 2.5rem;
-      letter-spacing: 0.3em;
-    }
-  }
 }.start, .pause {
     background-color: #fa442d;
 }.start:focus, .start:active, .pause:focus, .pause:active {
@@ -465,11 +473,8 @@ menu {
     font-size: 3.125rem;
   }
 }footer {
-    padding: 1rem 0 1.25rem;;
+    padding: 1.25rem 0;
     background: rgba(0, 0, 0, 0.78);
-}@media all and (min-height: 2560px) {footer{
-    padding: 1rem 0 1.75rem;
-  }
 }.footer a {
     color: white;
 }@media all and (min-height: 2560px) {.footer a{
@@ -507,10 +512,10 @@ menu {
     font-size: 1.25rem;
   }
 }.timer-container {
-    height: 50vh;
-    width: 50vh;
     padding: 3px;
-    margin: 5% auto 0;
+    height: 350px;
+    width: 350px;
+    margin: 60px auto 90px;
     border-radius: 50%;
     border: 2px solid #0BFF2B;
     -webkit-transition: all .5s ease-in 0s;
@@ -518,11 +523,8 @@ menu {
     -webkit-transform: scale(1);
             transform: scale(1);
 }@media (min-width: 600px) {.timer-container{
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    margin: 5% auto 0;
-    height: 50vh;
-    width: 50vh;
+    height: 400px;
+    width: 400px;
   }
 }.timer-container:hover {
   box-shadow: 0px, 0px, 3px, 5px, #0BFF2B;
@@ -531,17 +533,18 @@ menu {
     overflow: hidden;
     border-radius: 50%;
     height: 100%;
+    width: 100%;
+    margin: 0 auto;
 }.timer-inner-circle h2 {
-  margin-top: 23%;
-  font-size: 1.75rem;
-  letter-spacing: 0.2em;
+  margin-top: 4.375rem;
+  font-size: 36px;
+  letter-spacing: 0.07em;
 }@media all and (min-width: 600px) {.timer-inner-circle h2{
-    letter-spacing: 0.15em;
     font-size: 2.5rem;
   }@media all and (min-width: 768px) {.timer-inner-circle h2{
-      margin-top: 26%;
+      margin-top: 80px;
     }@media all and (min-height: 2560px) {.timer-inner-circle h2{
-        font-size: 8rem;
+        margin-top: 80px;
       }
     }
   }
@@ -557,18 +560,15 @@ menu {
 }.timer-filler-break {
     background-color: #D87D2C;
 }.timer-clock {
-    margin: 5% 0 10%;
-    font-size: 1.75rem;
+    margin: 2.5% 0 10%;
+    font-size: 36px;
 	letter-spacing: 0.2em;
 }@media all and (min-width: 600px) {.timer-clock{
-    margin: 7.5% 0 18%;
+    margin: 5% auto;
     letter-spacing: 0.2em;
     font-size: 3.125rem;
   }@media all and (min-height: 800px) {.timer-clock{
-      margin: 5% 0 10%;
-    }@media all and (min-height: 2560px) {.timer-clock{
-        font-size: 8rem;
-      }
+      margin: 5% auto;
     }
   }
 }

@@ -1,17 +1,15 @@
 .timer-container {
-    height: 50vh;
-    width: 50vh;
     padding: 3px;
-    margin: 5% auto 0;
+    height: 350px;
+    width: 350px;
+    margin: 60px auto 90px;
     border-radius: 50%;
     border: 2px solid #0BFF2B;
     transition: all .5s ease-in 0s;
     transform: scale(1);
     @media (min-width: $breakpointSmall) {
-        transform: scale(1);
-        margin: 5% auto 0;
-        height: 50vh;
-        width: 50vh;
+        height: 400px;
+        width: 400px;
     }
     &:hover {
         box-shadow: 0px, 0px, 3px, 5px, #0BFF2B;
@@ -23,17 +21,18 @@
     overflow: hidden;
     border-radius: 50%;
     height: 100%;
+    width: 100%;
+    margin: 0 auto;
     h2 {
-        margin-top: 23%;
-        font-size: $midSize;
-		letter-spacing: 0.2em;
+        margin-top: $sizeSemiGrande;
+        font-size: 36px;
+		letter-spacing: 0.07em;
 		@media all and (min-width: $breakpointSmall) {
-			letter-spacing: 0.15em;
 			font-size: $largeSize;
 			@media all and (min-width: $breakpointSmall2) {
-				margin-top: 26%;
+				margin-top: 80px;
 				@media all and (min-height: $breakpointLargest) {
-					font-size: $sizeUltraGrande;
+                    margin-top: 80px;
 				}
 			}
 		}
@@ -59,18 +58,15 @@
 }
 
 .timer-clock {
-    margin: 5% 0 10%;
-    font-size: $midSize;
+    margin: 2.5% 0 10%;
+    font-size: 36px;
 	letter-spacing: 0.2em;
     @media all and (min-width: $breakpointSmall) {
-        margin: 7.5% 0 18%;
+        margin: 5% auto;
 		letter-spacing: 0.2em;
 		font-size: $largestSize;
 		@media all and (min-height: $breakpointHeightSmall2) {
-			margin: 5% 0 10%;
-			 @media all and (min-height: $breakpointLargest) {
-				 font-size: $sizeUltraGrande;
-			 }
+			margin: 5% auto;
 		}
     }
 }

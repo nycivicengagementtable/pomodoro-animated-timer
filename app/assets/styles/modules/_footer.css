@@ -1,9 +1,6 @@
 footer {
-    padding: 1rem 0 1.25rem;;
+    padding: 1.25rem 0;
     background: rgba(0, 0, 0, 0.78);
-	@media all and (min-height: $breakpointLargest) {
-		padding: 1rem 0 1.75rem;
-	}
 }
 
 .footer a {
