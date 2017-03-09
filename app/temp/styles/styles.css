@@ -440,23 +440,19 @@ menu {
     letter-spacing: 0.1em;
 }.start, .pause {
     background-color: #fa442d;
-    padding-left: -3px;
 }.start:focus, .start:active, .pause:focus, .pause:active {
-  -webkit-transform: translate(1px, 1px);
-          transform: translate(1px, 1px);
+  -webkit-transform: translate(-3px, 1px);
+          transform: translate(-3px, 1px);
   color: black;
   box-shadow: 0px 1px 1px 1px black;
-  padding-left: -3px;
 }.reset {
     background-color: #844cae;
     margin-left: 10px;
-    padding-left: -3px;
 }.reset:focus, .reset:active {
-  -webkit-transform: translate(1px, 1px);
-          transform: translate(1px, 1px);
+  -webkit-transform: translate(-3px, 1px);
+          transform: translate(-3px, 1px);
   color: black;
   box-shadow: 0px 1px 1px 1px black;
-  padding-left: -3px;
 }.break-container {
     margin-top: 0;
     cursor: pointer;
